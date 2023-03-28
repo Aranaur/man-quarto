@@ -54,7 +54,7 @@ import fontawesome as fa
 # DataCamp Group 
 ![](img/datacamp-logo.png)
 
-## DataCamp Group {.smaller} {.unlisted}
+## DataCamp Group {.unlisted}
 
 :::: {.columns}
 
