@@ -1,0 +1,175 @@
+---
+title: "МАН: Quarto"
+subtitle: "Майстер-клас"
+author: "Мірошниченко Ігор Вікторович"
+language: _language-ukr.yml
+date: today
+date-format: iso
+format: html
+---
+
+# Markdown basic
+
+## Використання тексту
+
+*Всім* **привіт**!
+
+надрядковий^text^
+
+підрядковий текст~text~
+
+~~закреслений текст~~
+
+`import numpy as np`
+
+> цитата
+
+## Посилання
+
+[Google](https://google.com)
+
+![МАН](img/man.png){#fig-man}
+
+## Списки
+
+* Перший пункт
+* Другий пункт
+    + Підпункт
+
+1. Перший пункт
+2. Другий пункт
+    i) Підпункт
+
+(@) Перший пункт
+
+текст після списку
+
+(@) Другий пункт
+(@) Підпункт
+
+## Таблиці
+
+| Зліва | Справа | За замовчуванням | По центру |
+|------:|:-------|------------------|:---------:|
+|   12  |  12    |    **12**          |    12     |
+|  123  |  123   |   123            |   123     |
+|    1  |    1   |     1            |     1     |
+
+### Код
+
+```{.bash}
+pip install tabulate
+```
+
+```{python}
+from IPython.display import Markdown
+from tabulate import tabulate
+
+table = [["Bilbo Baggins", "Hobbits", "Male"],
+         ["Beren", "Men", "Male"],
+         ["Nimrodel", "Elves", "Female"],
+         ["Muzgash", "Orc", "Male"]]
+
+Markdown(tabulate(
+  table, 
+  headers=["Name", "Race", "Sex"]
+))
+```
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame(data = table,
+    columns = ["Name", "Race", "Sex"])
+df
+```
+
+
+```{r}
+#| warning: false
+
+library(reticulate)
+library(knitr)
+
+kable(py$df)
+```
+
+
+```{r}
+library(kableExtra)
+
+py$df %>% 
+  kbl() %>% 
+  kable_classic_2(full_width = F)
+```
+
+## Рівняння
+
+Рівняння у середині тексту: $E = mc^2$.
+
+Рівняння на окремому рядку: $$E = mc^2$$.
+
+## Діаграми
+
+```{mermaid}
+flowchart LR
+  A[Квадратна форма] --> B(Кругла форма)
+  B --> C{Рішення}
+  C --> D[Результат один]
+  C --> E[Результат два]
+```
+
+## Виноски
+
+::: {.callout-warning}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
+
+# Код
+
+```{python}
+#| eval: false
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+x = np.arange(-4, 4, .012)
+y = np.arange(-4, 4, .012)
+X, Y = np.meshgrid(x, y)
+Z = 1 - np.abs(X) - np.sin(Y**2)
+W = 1 + Y - np.cos(X**2)
+
+fig = plt.figure(figsize=(8, 8))
+ax = fig.add_subplot(projection='polar')
+plt.scatter(Z, W, alpha=.03, s=0.2)
+plt.axis('off')
+plt.show()
+```
+
+- eval
+- echo
+- include
+- error
+- warning
+
+## Вбудований код
+
+```{python}
+import math
+
+radius = 7.5
+cirlce_area = round(math.pi * pow(radius, 2), 2)
+```
+
+
+```{python}
+#| echo: false
+from IPython.display import Markdown
+
+Markdown(f"Площа кола з радіусом {radius} дорівнює {cirlce_area}")
+```
+
+Варіант через `R`:\
+Площа кола з радіусом `r py$radius` дорівнює `r py$cirlce_area`
