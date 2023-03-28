@@ -3,11 +3,9 @@ title: "Науково-видавнича система Quarto"
 subtitle: "Мала академія наук України"
 author: "Ігор Мірошниченко"
 date: today
+date-format: iso
 institute: КНЕУ::ІІТЕ
 language: _language-ukr.yml
-crossref:
-  fig-title: Рис.     # (default is "Figure")
-  tbl-title: Таб.     # (default is "Table")
 format:
   revealjs: 
     theme: [simple, custom.scss]
@@ -20,7 +18,7 @@ format:
     mouse-wheel: true
     highlight-style: github
     mainfont: metropolis
-    toc-depth: 1
+    toc-depth: 2
 editor: source
 execute:
   echo: true
@@ -53,10 +51,10 @@ import fontawesome as fa
 {{< fa house >}} [aranaur.rbind.io](https://aranaur.rbind.io)
 :::
 
-# DataCamp Group
+# DataCamp Group 
 ![](img/datacamp-logo.png)
 
-## DataCamp Group {.smaller}
+## DataCamp Group {.smaller} {.unlisted}
 
 :::: {.columns}
 
@@ -72,7 +70,7 @@ import fontawesome as fa
 
 ---
 
-## DataCamp Group
+## DataCamp Group {.unlisted}
 
 :::: {.columns}
 
@@ -83,7 +81,7 @@ import fontawesome as fa
 ::: {.column width=40%}
 **Як долучитися?**
 
-1. Приєднатися до телеграм-групи [Data Mirosh](https://t.me/araprof)
+1. Приєднатися до телеграм-групи {{< fa brands telegram >}} [Data Mirosh](https://t.me/araprof)
 2. Зареєструйтесь на [DataCamp](http://datacamp.com)
 3. Приєднайтесь до класу за [посиланням](https://www.datacamp.com/groups/shared_links/c051af9d2981bf4c7185c645f733cf49ba15f55b079c0d016a9e41314f7104e1)
 
@@ -99,7 +97,7 @@ import fontawesome as fa
 
 # Quarto
 
-## Quarto
+## Quarto {.unlisted}
 
 [Quarto](https://quarto.org/) — це науково–технічна видавнича система з відкритим кодом, яка ґрунтується на універсальному конверторі документів [Pandoc](https://pandoc.org/) та використовує мову розмітки [Markdown](https://www.markdownguide.org/). 
 
@@ -200,7 +198,7 @@ quarto create-project mybook --type book
 
 ---
 
-## Робота з проектами
+## Робота з проектами {.unlisted}
 
 Створити Quarto--проект можна декількома шляхами:
 
@@ -212,7 +210,7 @@ quarto create-project mybook --type book
 
 ---
 
-## Робота з проектами
+## Робота з проектами {.unlisted}
 
 Створити Quarto--проект можна декількома шляхами:
 
@@ -262,7 +260,7 @@ Quatro документи складаються з трьох базових с
 
 ---
 
-## YAML–шапка
+## YAML–шапка {.smaller}
 
 YAML–шапка знаходиться нагорі документу і відділена трьома дефісами (`---`) зверху та знизу. 
 
@@ -270,13 +268,30 @@ YAML–шапка знаходиться нагорі документу і ві
 
 ``` markdown
 ---
-title: "Dracula"
-author: "Bram Stoker"
-date: "May 26, 1897"
-format: 
-  html:
+title: "Науково-видавнича система Quarto"
+subtitle: "Мала академія наук України"
+author: "Ігор Мірошниченко"
+date: today
+date-format: iso
+institute: КНЕУ::ІІТЕ
+language: _language-ukr.yml
+format:
+  revealjs: 
+    theme: [simple, custom.scss]
+    logo: img/logo.png
+    chalkboard: true
+    slide-number: true
     toc: true
-    code-fold: true
+    toc-title: ЗМІСТ
+    transition: fade
+    mouse-wheel: true
+    highlight-style: github
+    mainfont: metropolis
+    toc-depth: 1
+editor: source
+execute:
+  echo: true
+jupyter: python3
 ---
 ```
 
@@ -286,7 +301,38 @@ format:
 
 Ця частина документу йде одразу після YAML–шапки і складає основну частину документу.
 
-`Markdown` — це популярна і зручна мова розмітки. Ви непевно зустрічали її в README.md–файлах репозиторіїв `GitHub`, а також у `Telegram`–повідомленнях.
+`Markdown` — це популярна і зручна мова розмітки.
+
+Ви непевно зустрічали її в README.md–файлах репозиторіїв `GitHub`, а також у `Telegram`–повідомленнях.
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="44%"}
+``` markdown
+*Зродились ми великої години* \
+**З пожеж війни і полум'я вогнів.**\
+***Плекав нас біль за долю України,***\
+`Зростив в нас гнів` і лють на ~~ворогів~~!
+```
+:::
+
+::: {.column width="55%"}
+*Зродились ми великої години* \
+**З пожеж війни і полум'я вогнів.**\
+***Плекав нас біль за долю України,***\
+`Зростив в нас гнів` і лють на ~~ворогів~~!
+:::
+
+::::
+
+<br>
+
+``` markdown
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+```
+$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ## Чанки з кодом
 
@@ -298,4 +344,111 @@ print('Fly, you fools!')
 ```
 ``````
 
+```{python}
+#| echo: false
+print('Fly, you fools!')
+```
+
 Результат чанку за замовчування виводиться одразу після нього, але все це можна налаштувати.
+
+
+:::: {.columns}
+
+::: {.column width="55%"}
+```{python}
+#| eval: false
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+x = np.arange(-4, 4, .012)
+y = np.arange(-4, 4, .012)
+X, Y = np.meshgrid(x, y)
+Z = 1 - np.abs(X) - np.sin(Y**2)
+W = 1 + Y - np.cos(X**2)
+
+fig = plt.figure(figsize=(4, 4))
+ax = fig.add_subplot(projection='polar')
+plt.scatter(Z, W, alpha=.03, s=0.2)
+plt.axis('off')
+plt.show()
+```
+:::
+
+::: {.column width="45%"}
+```{python}
+#| echo: false
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+x = np.arange(-4, 4, .012)
+y = np.arange(-4, 4, .012)
+X, Y = np.meshgrid(x, y)
+Z = 1 - np.abs(X) - np.sin(Y**2)
+W = 1 + Y - np.cos(X**2)
+
+fig = plt.figure(figsize=(4, 4))
+ax = fig.add_subplot(projection='polar')
+plt.scatter(Z, W, alpha=.03, s=0.2)
+plt.axis('off')
+plt.show()
+```
+:::
+
+::::
+
+## Чанки з кодом {.unlisted}
+
+```{python}
+from ipyleaflet import Map, Marker, basemaps, basemap_to_tiles
+m = Map(
+  center=(50.46361774858406, 30.460139871139447),
+  zoom=15
+)
+m.add_layer(Marker(location=(50.46361774858406, 30.460139871139447)))
+m
+```
+
+## Чанки з кодом {.unlisted}
+
+<center>![](img/penguins.png){width=30%} </center>
+```{python}
+from palmerpenguins import load_penguins
+
+df = load_penguins()
+df
+```
+
+## Чанки з кодом {.smaller .unlisted}
+
+```{python}
+import plotly.express as px
+import plotly.io as pio
+from palmerpenguins import load_penguins
+
+df = load_penguins()
+fig = px.scatter(df, x="flipper_length_mm", y="body_mass_g", 
+                 color="species", 
+                 marginal_y="violin", marginal_x="box", 
+                 trendline="ols", template="simple_white")
+fig.show()
+```
+
+# Дякую за увагу! {.unlisted}
+
+<br>
+
+::: nonincremental
+{{< fa envelope >}} [miroshnychenko.ihor\@kneu.edu.ua](miroshnychenko.ihor@kneu.edu.ua)
+
+{{< fa brands telegram >}} [Data Mirosh](https://t.me/araprof)
+
+{{< fa brands linkedin >}} [\@ihormiroshnychenko](https://www.linkedin.com/in/ihormiroshnychenko/)
+
+{{< fa brands github >}} [\@aranaur](https://github.com/Aranaur)
+
+{{< fa house >}} [aranaur.rbind.io](https://aranaur.rbind.io)
+:::

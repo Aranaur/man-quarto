@@ -1,0 +1,315 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod,
+  oneside]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[left=1in,marginparwidth=2.0666666666667in,textwidth=4.1333333333333in,marginparsep=0.3in]{geometry}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Зміст}
+\else
+  \newcommand\contentsname{Зміст}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Список Рисунків}
+\else
+  \newcommand\listfigurename{Список Рисунків}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Список Таблиць}
+\else
+  \newcommand\listtablename{Список Таблиць}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Рисунок}
+\else
+  \newcommand\figurename{Рисунок}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Таблиця}
+\else
+  \newcommand\tablename{Таблиця}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Список}
+\newcommand*\listoflistings{\listof{codelisting}{Список Каталогів}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Мала академія наук України},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Мала академія наук України}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, frame hidden, enhanced, interior hidden]}{\end{tcolorbox}}\fi
+
+\textbf{Мала́ Акаде́мія нау́к Украї́ни} --- освітня система, яка забезпечує
+організацію і координацію науково-дослідної діяльності учнів, створює
+умови для їх інтелектуального, духовного, творчого розвитку та
+професійного самовизначення, сприяє нарощуванню наукового потенціалу
+країни.
+
+\begin{marginfigure}
+
+{\centering \includegraphics{img/man.png}
+
+}
+
+\caption{Логотип Малої академії наук України}
+
+\end{marginfigure}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.1944}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.8056}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{Загальна інформація}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Країна} & {🇺🇦} Україна \\
+\textbf{Штаб-квартира} & 04119, Київ, вул. Дегтярівська, 38-44 \\
+\textbf{Відповідальний директор} &
+\href{https://uk.wikipedia.org/wiki/\%D0\%9B\%D1\%96\%D1\%81\%D0\%BE\%D0\%B2\%D0\%B8\%D0\%B9_\%D0\%9E\%D0\%BA\%D1\%81\%D0\%B5\%D0\%BD_\%D0\%92\%D0\%B0\%D1\%81\%D0\%B8\%D0\%BB\%D1\%8C\%D0\%BE\%D0\%B2\%D0\%B8\%D1\%87}{Оксен
+Лісовий}, кандидат філософських наук, лауреат Державної премії України в
+галузі освіти \\
+\href{http://man.gov.ua/}{man.gov.ua} & \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{ux456ux441ux442ux43eux440ux456ux44f}{%
+\section{Історія}\label{ux456ux441ux442ux43eux440ux456ux44f}}
+
+\textbf{20--30-ті роки XX ст. --- початок формування гуртків}, на
+заняття яких запрошувались вчені, що залучали дітей до
+експериментальної, дослідницької, пошукової роботи у різних галузях
+знань.
+
+\textbf{1939 рік --- звернення Академії наук України} щодо
+\textbf{підтримки роботи} з талановитими дітьми та учнівською молоддю
+--- членами наукових гуртків.
+
+\textbf{1947 рік --- початок роботи першого наукового товариства учнів
+(НТУ)} --- «Товариства науки і техніки школярів» у м Києві.
+
+\textbf{1950 рік} --- проведення в м. Києві \textbf{першої учнівської
+науково-практичної конференції}.
+
+\textbf{1960--90-ті роки} --- створення малих академій наук учнівської
+молоді та наукових товариств учнів у різних регіонах України
+
+\textbf{2000 рік} --- рішення Президії Національної академії наук
+України «Про підвищення ролі Національної академії наук України в роботі
+з творчою молоддю» і призначення С. Довгого президентом МАН.
+
+\textbf{2004 рік} --- створений Позашкільний навчальний заклад Мала
+академія наук учнівської молоді, на який були покладені функції
+організаційно-методичного керівництва дослідницько-експериментальною
+діяльністю учнів та завдання зі створення мережі регіональних
+підрозділів.
+
+\textbf{Лютий 2010 року} --- заклад реорганізовано в Український
+державний центр «Мала академія наук України» Міністерства освіти і науки
+України та Національної академії наук України.
+
+\textbf{Квітень 2010 року} --- Державною програмою економічного і
+соціального розвитку України на 2010 рік Український державний центр
+«Мала академія наук України» визнано закладом, на базі якого створюється
+загальнодержавна система пошуку і підтримки обдарованих дітей.
+
+\textbf{Вересень 2010 року} --- відповідно до Указу Президента України,
+Українському державному центру «Мала академія наук України» надано
+статус національного і перейменовано у Національний центр «Мала академія
+наук України».
+
+\textbf{2015 рік} --- Закон України «Про наукову та науково-технічну
+діяльність» визначає Малу академію наук України як мережу формування
+інтелектуального капіталу нації та виховання майбутньої наукової зміни.
+МАНУ має забезпечувати дослідницько-експериментальну, наукову,
+конструкторську, винахідницьку та пошукову діяльність творчої молоді
+України.
+
+\textbf{2018 року} діяльність МАН одержала світове визнання: Мала
+академія наук України отримала статус Центру наукової освіти II
+категорії під егідою ЮНЕСКО. Відповідне рішення було одноголосно
+прийняте на 39-й сесії Генеральної конференції ЮНЕСКО. МАН --- перша і
+єдина в Україні освітня структура, що має такий престижний статус. Це
+надає ексклюзивні можливості для сотень тисяч дітей і педагогів, сприяє
+формуванню позитивного іміджу України на міжнародній арені та розвитку
+освітньої дипломатії.
+
+\textbf{У вересні 2018 року} Мала академія
+\href{https://www.copernicus.eu/en/opportunities/education/copernicus-academy}{отримала
+статус Академії Copernicus}. Ця мережа об'єднує 37 країн і спрямована на
+популяризацію програми Європейського Союзу зі спостереження за Земною
+поверхнею. Україна стала однією з перших країн --- не членів ЄС, яка
+увійшла до цієї поважної організації. Статус Академії Copernicus
+відкриває українським школярам і дослідникам доступ до даних 29-ти
+європейських супутників, дає можливість брати участь у міжнародних
+заходах у сфері дистанційного зондування Землі.
+
+\hypertarget{ux447ux43bux435ux43dux441ux442ux432ux43e}{%
+\section{Членство}\label{ux447ux43bux435ux43dux441ux442ux432ux43e}}
+
+Члени МАН отримують статус слухачів, кандидатів і дійсних
+членів\footnote{\href{https://uk.wikipedia.org/wiki/\%D0\%9C\%D0\%B0\%D0\%BB\%D0\%B0_\%D0\%B0\%D0\%BA\%D0\%B0\%D0\%B4\%D0\%B5\%D0\%BC\%D1\%96\%D1\%8F_\%D0\%BD\%D0\%B0\%D1\%83\%D0\%BA_\%D0\%A3\%D0\%BA\%D1\%80\%D0\%B0\%D1\%97\%D0\%BD\%D0\%B8\#CITEREF\%D0\%95\%D0\%A1\%D0\%A3_\%D0\%9C\%D0\%90\%D0\%9D}{ЕСУ\_МАН}}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Слухачами} можуть стати всі охочі учні 6--11 кл.
+  загальноосвітніх і професійно-технічних навчальних закладів, які
+  виявляють цікавість до наукової діяльності, хочуть одержати додаткові
+  знання в окремих галузях науки та беруть участь у роботі секції чи
+  гуртка.
+\item
+  \textbf{Кандидатами} стають учні гуртків, секцій, які виявляють
+  здібності до поглибленого вивчення наукових дисциплін поза шкільною
+  програмою, схильні до проведення наукових досліджень, технічної
+  творчості та виступають на конференціях, виставках, є призерами
+  олімпіад.
+\item
+  \textbf{Дійсними членами} стають кандидати, які мають самостійні
+  наукові праці та навчаються в наукових гуртках і секціях не менше 2-х
+  років.
+\end{itemize}
+
+\hypertarget{ux43fux43eux441ux438ux43bux430ux43dux43dux44f}{%
+\section{Посилання}\label{ux43fux43eux441ux438ux43bux430ux43dux43dux44f}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{http://man.gov.ua/}{Офіційний сайт}
+\item
+  \href{http://av.man.gov.ua/}{Сайт Асоціації випускників МАН}
+\end{itemize}
+
+\hypertarget{ux434ux438ux432.-ux442ux430ux43aux43eux436}{%
+\section{Див. також}\label{ux434ux438ux432.-ux442ux430ux43aux43eux436}}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://uk.wikipedia.org/wiki/\%D0\%9C\%D1\%83\%D0\%B7\%D0\%B5\%D0\%B9_\%D0\%BD\%D0\%B0\%D1\%83\%D0\%BA\%D0\%B8_(\%D0\%9A\%D0\%B8\%D1\%97\%D0\%B2)}{Музей
+  науки Малої академії науки України}
+\end{itemize}
+
+
+
+\end{document}
